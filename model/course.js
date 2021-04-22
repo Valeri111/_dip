@@ -2,6 +2,7 @@ const { v4: uuid } = require('uuid');
 const fs = require('fs')
 const path = require('path')
 
+
 class Course {
   constructor(title, price, img) {
     this.title = title
@@ -52,6 +53,11 @@ class Course {
         }
       )
     })
+  }
+
+  static async getById(id) {
+    const courses = await Course.getAll()
+    return courses.find(c => c.id === id)
   }
 }
 
