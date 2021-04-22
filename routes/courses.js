@@ -18,7 +18,7 @@ router.get('/:id/edit', async (req, res) => {
 
   const course = await Course.getById(req.params.id)
 
-  res.render('course-edit', {
+  res.render('course-edit.hbs', {
     title: `Редактировать ${course.title}`,
     course
   })
