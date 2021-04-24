@@ -1,6 +1,6 @@
 const {Router} = require('express')
-const Card = require('../model/card')
-const Course = require('../model/course')
+const Card = require('../models/card')
+const Course = require('../models/course')
 const router = Router()
 
 router.post('/add', async (req, res) => {
