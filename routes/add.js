@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
 
   try {
   await course.save()
-  res.redirect('/courses.hbs')
+  res.redirect('/courses')
   } catch (e) {
     console.log(e)
   }

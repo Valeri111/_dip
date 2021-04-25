@@ -36,7 +36,9 @@ async function start() {
     const url = `mongodb+srv://admin:NYu6gNjmvkyXU5T@cluster0.yvhfu.mongodb.net/Courses?retryWrites=true&w=majority`
     await mongoose.connect(url, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      retryWrites: true,
     })
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`)
