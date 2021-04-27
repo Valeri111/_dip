@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const csrf = require('csurf')
+const flash = require('connect-flash')
 const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
 const session = require('express-session')
@@ -14,10 +15,11 @@ const authRoutes = require('./routes/auth')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const Handlebars = require('handlebars')
 const varMiddleware = require('./middleware/variables')
-const User = require('./models/user')
 const userMiddleware = require('./middleware/user')
 
 const MONGODB_URI =`mongodb+srv://admin:NYu6gNjmvkyXU5T@cluster0.yvhfu.mongodb.net/Courses?retryWrites=true&w=majority`
+const PORT = process.env.PORT || 3000
+
 const app = express()
 const hbs = exphbs.create({
   defaultLayout: 'main', 
@@ -42,6 +44,7 @@ app.use(session({
   store
 }))
 app.use(csrf())
+app.use(flash())
 app.use(varMiddleware)
 app.use(userMiddleware)
 
@@ -52,7 +55,7 @@ app.use('/card', cardRoutes)
 app.use('/orders', ordersRoutes)
 app.use('/auth', authRoutes)
 
-const PORT = process.env.PORT || 3000
+
 
 async function start() {
   try {
