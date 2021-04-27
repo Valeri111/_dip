@@ -26,4 +26,3 @@ course.method('toClient', function() {
 })
  
 module.exports = model('Course', course)
-
