@@ -1,45 +1,63 @@
-<nav>
+<nav class="navigation">
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Приложение курсов</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <a href="/" class="brand-logo"><img src="/img/world2.png" alt="logo" class="logo-img"></a>
+    <ul  class=" navigation-list">
 
     {{#if isHome}}
-        <li class="active"><a href="/">Главная</a></li>
+        <li class="active navigation-item"><a href="/" class="navigation-link">Главная</a></li>
       {{else}}
-        <li><a href="/">Главная</a></li>
+        <li class="navigation-item"><a class="navigation-link" href="/">Главная</a></li>
+      {{/if}}
+
+      {{#if isChat}}
+        <li class="active navigation-item"><a class="navigation-link" href="/chat">Форум</a></li>
+      {{else}}
+        <li class="navigation-item"><a class="navigation-link" href="/chat">Форум</a></li>
       {{/if}}
 
       {{#if isCourses}}
-        <li class="active"><a href="/courses">Курсы</a></li>
+        <li class="active navigation-item"><a href="/courses" class="navigation-link">Курсы</a></li>
       {{else}}
-        <li><a href="/courses">Курсы</a></li>
+        <li class="navigation-item"><a class="navigation-link" href="/courses">Курсы</a></li>
       {{/if}}
 
       {{#if isAuth}}
         {{#if isAdd}}
-          <li class="active"><a href="/add">Добавить курс</a></li>
+          <li class="active navigation-item"><a class="navigation-link" href="/add">Добавить курс</a></li>
         {{else}}
-          <li><a href="/add">Добавить курс</a></li>
+          <li class="navigation-item"><a class="navigation-link" href="/add">Добавить курс</a></li>
         {{/if}} 
 
         {{#if isCard}}
-          <li class="active"><a href="/card">Корзина</a></li>
+          <li class="active navigation-item"><a class="navigation-link" href="/card">Мои курсы</a></li>
         {{else}}
-          <li><a href="/card">Корзина</a></li>
+          <li class="navigation-item"><a class="navigation-link" href="/card">Мои курсы</a></li>
         {{/if}} 
 
         {{#if isOrder}}
-          <li class="active"><a href="/orders">Заказы</a></li>
+          <li class="active navigation-item"><a href="/orders" class="navigation-link">Заказы</a></li>
         {{else}}
-          <li><a href="/orders">Заказы</a></li>
+          <li class="navigation-item"><a href="/orders" class="navigation-link">Заказы</a></li>
         {{/if}} 
 
-        <li><a href="/auth/logout">Выйти</a></li>
+        <li class="navigation-item"><a href="/auth/logout" class="navigation-link">Выйти</a></li>
       {{else}}
         {{#if isLogin}}
-          <li class="active"><a href="/auth/login#login">Войти</a></li>
+          <li class="active navigation-item">
+          <a class="navigation-link" href="/auth/login#login">
+            <svg class="registr" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.7" d="M7.5 7.10526C7.5 11.0226 10.865 14.2105 15 14.2105C19.135 14.2105 22.5 11.0226 22.5 7.10526C22.5 3.18789 19.135 0 15 0C10.865 0 7.5 3.18789 7.5 7.10526ZM28.3333 30H30V28.4211C30 22.3279 24.765 17.3684 18.3333 17.3684H11.6667C5.23333 17.3684 0 22.3279 0 28.4211V30H1.66667H3.33333H26.6667H28.3333Z" fill="#0E0E0E"/>
+            </svg>
+          </a>
+        </li>
         {{else}}
-          <li><a href="/auth/login#login">Войти</a></li>
+          <li class="navigation-item last-item">
+          <a class="navigation-link last-item" href="/auth/login#login">
+            <svg class="registr" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.7" d="M7.5 7.10526C7.5 11.0226 10.865 14.2105 15 14.2105C19.135 14.2105 22.5 11.0226 22.5 7.10526C22.5 3.18789 19.135 0 15 0C10.865 0 7.5 3.18789 7.5 7.10526ZM28.3333 30H30V28.4211C30 22.3279 24.765 17.3684 18.3333 17.3684H11.6667C5.23333 17.3684 0 22.3279 0 28.4211V30H1.66667H3.33333H26.6667H28.3333Z" fill="#0E0E0E"/>
+            </svg>
+          </a>
+        </li>
         {{/if}} 
       {{/if}}
     </ul>
