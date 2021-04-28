@@ -27,12 +27,21 @@
         {{else}}
           <li class="navigation-item"><a class="navigation-link" href="/add">Добавить курс</a></li>
         {{/if}} 
+        
+        {{#if isProfile}}
+          <li class="active"><a href="/profile">Профиль</a></li>
+        {{else}}
+        
+          <li><a href="/profile">Профиль</a></li>
+        {{/if}}
 
         {{#if isCard}}
           <li class="active navigation-item"><a class="navigation-link" href="/card">Мои курсы</a></li>
         {{else}}
           <li class="navigation-item"><a class="navigation-link" href="/card">Мои курсы</a></li>
         {{/if}} 
+
+         
 
         {{#if isOrder}}
           <li class="active navigation-item"><a href="/orders" class="navigation-link">Заказы</a></li>
