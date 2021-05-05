@@ -9,12 +9,6 @@
         <li class="navigation-item"><a class="navigation-link" href="/">Главная</a></li>
       {{/if}}
 
-      {{#if isChat}}
-        <li class="active navigation-item"><a class="navigation-link" href="/chat">Форум</a></li>
-      {{else}}
-        <li class="navigation-item"><a class="navigation-link" href="/chat">Форум</a></li>
-      {{/if}}
-
       {{#if isCourses}}
         <li class="active navigation-item"><a href="/courses" class="navigation-link">Курсы</a></li>
       {{else}}
@@ -39,14 +33,6 @@
           <li class="active navigation-item"><a class="navigation-link" href="/card">Мои курсы</a></li>
         {{else}}
           <li class="navigation-item"><a class="navigation-link" href="/card">Мои курсы</a></li>
-        {{/if}} 
-
-         
-
-        {{#if isOrder}}
-          <li class="active navigation-item"><a href="/orders" class="navigation-link">Заказы</a></li>
-        {{else}}
-          <li class="navigation-item"><a href="/orders" class="navigation-link">Заказы</a></li>
         {{/if}} 
 
         <li class="navigation-item"><a href="/auth/logout" class="navigation-link">Выйти</a></li>
