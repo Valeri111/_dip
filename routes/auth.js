@@ -73,7 +73,7 @@ router.post('/register', registerValidators, async (req, res) => {
         <i>данные вашей учетной записи:</i>
         <ul>
             <li>login: ${req.body.email}</li>
-            <li>password: ${req.body.pass}</li>
+            <li>password: ${req.body.password}</li>
         </ul>
         ${req.body.promo ? `Вы подписаны на рассылку наших предложений,
         чтобы отписаться от рассылки перейдите по ссылке
