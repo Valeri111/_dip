@@ -12,8 +12,8 @@ function isOwner(course, req) {
 router.get('/', async (req, res) => {
   const courses = await Course.find()
   .populate('userId', 'email name')
-  .select('price title img')
-  
+  .select('price title img titlehref')
+ 
   res.render('courses.hbs', {
     title: 'Курсы',
     isCourses: true,

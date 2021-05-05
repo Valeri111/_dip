@@ -13,7 +13,8 @@ const course = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User'
-  }
+  },
+  titlehref : String
 })
 
 course.method('toClient', function() {
