@@ -4,6 +4,7 @@ const {validationResult} = require('express-validator')
 const User = require('../models/user')
 const {registerValidators} = require('../utils/validators')
 const router = Router()
+const mailer = require('../nodemalier')
 
 router.get('/login', async (req, res) => {
   res.render('auth/login', {
@@ -63,11 +64,32 @@ router.post('/register', registerValidators, async (req, res) => {
     const user = new User({
       email, name, password: hashPassword, cart: {items: []}
     })
+    const message = {        
+      to: req.body.email,
+      subject: 'Congratulations! You are successfully registred on our site',
+      html: `
+        <h2>Поздравляем, Вы успешно зарегистрировались на нашем сайте!</h2>
+        
+        <i>данные вашей учетной записи:</i>
+        <ul>
+            <li>login: ${req.body.email}</li>
+            <li>password: ${req.body.pass}</li>
+        </ul>
+        ${req.body.promo ? `Вы подписаны на рассылку наших предложений,
+        чтобы отписаться от рассылки перейдите по ссылке
+        <a href="http://localhost:3001/unsubscribe/${req.body.email}">отписаться от рассылки</a>` : ''}
+        <p>Данное письмо не требует ответа.<p>`
+  }
+  mailer(message) 
     await user.save()
     res.redirect('/auth/login#login')
   } catch (e) {
     console.log(e)
   }
+})
+
+router.get('/unsubscribe/:email', (req, res) => {
+  res.send(`Ваш email: ${req.params.email} удален из списка рассылки!`)
 })
 
 module.exports = router

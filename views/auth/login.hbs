@@ -61,7 +61,11 @@
           <label for="name">Ваше имя</label>
           <span class="helper-text" data-error="Введите имя"></span>
         </div>
-
+         <div class="form-group form-check">
+             <input type="checkbox" name="promo" class="form-check-input" id="exampleCheck1">
+             <label class="form-check-label" for="exampleCheck1">Agree to receive promotion emails</label>
+          </div>
+         
         <input type="hidden" name="_csrf" value="{{csrf}}">
 
         <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
