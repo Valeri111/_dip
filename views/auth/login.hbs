@@ -2,74 +2,75 @@
   <div class="row">
     <div class="col s12">
       <ul class="tabs">
-        <li class="tab col s6"><a class="active" href="#login">Войти</a></li>
-        <li class="tab col s6"><a href="#register">Регистрация</a></li>
+        <h1 class="title auth-title">Зарегистрироваться на курсы</h1>
+        <li class="tab col s6"><a class="active login-title" href="#login">Войти</a></li>
+        <li class="tab col s6"><a href="#register" class="login-title">Зарегистрироваться</a></li>
       </ul>
     </div>
-    <div id="login" class="col s6 offset-s3">
+    <div class="login-container">
+      <div id="login" class="col s6 offset-s3 login-form">
+        {{#if loginError}}
+          <p class="alert">{{loginError}}</p>
+        {{/if}}
 
-      {{#if loginError}}
-        <p class="alert">{{loginError}}</p>
-      {{/if}}
-
-      <h1>Войти в магазин</h1>
-      <form action="/auth/login" method="POST">
-        <div class="input-field">
-          <input id="email" name="email" type="email" class="validate" required>
-          <label for="email">Email</label>
-          <span class="helper-text" data-error="Введите email"></span>
-        </div>
-
-        <div class="input-field">
-          <input id="password" name="password" type="password" class="validate" required>
-          <label for="password">Пароль</label>
-          <span class="helper-text" data-error="Введите пароль"></span>
-        </div>
-        <input type="hidden" name="_csrf" value="{{csrf}}">
-
-        <button class="btn btn-primary" type="submit">Войти</button>
-      </form>
-    </div>
-    <div id="register" class="col s6 offset-s3">
-
-      {{#if registerError}}
-        <p class="alert">{{registerError}}</p>
-      {{/if}}
-
-      <h1>Создать аккаунт</h1>
-      <form action="/auth/register" method="POST">
-        <div class="input-field">
-          <input id="remail" name="email" type="email" class="validate" required>
-          <label for="remail">Email</label>
-          <span class="helper-text" data-error="Введите email"></span>
-        </div>
-
-        <div class="input-field">
-          <input id="rpassword" name="password" type="password" class="validate" required>
-          <label for="rpassword">Пароль</label>
-          <span class="helper-text" data-error="Введите пароль"></span>
-        </div>
-
-        <div class="input-field">
-          <input id="confirm" name="confirm" type="password" class="validate" required>
-          <label for="confirm">Пароль еще раз</label>
-          <span class="helper-text" data-error="Введите пароль"></span>
-        </div>
-
-        <div class="input-field">
-          <input id="name" name="name" type="text" class="validate" required>
-          <label for="name">Ваше имя</label>
-          <span class="helper-text" data-error="Введите имя"></span>
-        </div>
-         <div class="form-group form-check">
-             <input type="checkbox" name="promo" class="form-check-input" id="exampleCheck1">
-             <label class="form-check-label" for="exampleCheck1">Agree to receive promotion emails</label>
+        <form action="/auth/login" method="POST">
+          <div class="input-field input-item">
+            <input id="email" name="email" type="email" placeholder="Email" class="validate login-input" required>
+            {{!-- <label for="email">Email</label>
+            <span class="helper-text" data-error="Введите email"></span> --}}
           </div>
-         
-        <input type="hidden" name="_csrf" value="{{csrf}}">
 
-        <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
-      </form>
+          <div class="input-field input-item">
+            <input id="password" name="password" type="password" class="validate login-input" placeholder="Пароль" required>
+            {{!-- <label for="password">Пароль</label>
+            <span class="helper-text" data-error="Введите пароль"></span> --}}
+          </div>
+          <input type="hidden" name="_csrf" value="{{csrf}}">
+
+          <button class="btn btn-primary btn-login" type="submit">Войти</button>
+        </form>
+      </div>
+      <img src="/img/register.svg" alt="log" class="log-img">
+      <div id="register" class="col s6 offset-s3 login-form">
+
+        {{#if registerError}}
+          <p class="alert">{{registerError}}</p>
+        {{/if}}
+
+        <form action="/auth/register" method="POST">
+          <div class="input-field input-item">
+            <input id="remail" name="email" type="email" placeholder="Email" class="validate login-input" required>
+            {{!-- <label for="remail">Email</label>
+            <span class="helper-text" data-error="Введите email"></span> --}}
+          </div>
+
+          <div class="input-field input-item">
+            <input id="rpassword" name="password" type="password" class="validate login-input" placeholder="Пароль" required>
+            {{!-- <label for="rpassword">Пароль</label>
+            <span class="helper-text" data-error="Введите пароль"></span> --}}
+          </div>
+
+          <div class="input-field input-item">
+            <input id="confirm" name="confirm" type="password" placeholder="Повторите пароль" class="validate login-input" required>
+            {{!-- <label for="confirm">Пароль еще раз</label>
+            <span class="helper-text" data-error="Введите пароль"></span> --}}
+          </div>
+
+          <div class="input-field input-item">
+            <input id="name" name="name" type="text" class="validate login-input" placeholder="Имя"  required>
+            {{!-- <label for="name">Ваше имя</label>
+            <span class="helper-text" data-error="Введите имя"></span> --}}
+          </div>
+          <div class="form-group form-check">
+              <input type="checkbox" name="promo" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Я соглашаюсь получать рекламные письма</label>
+            </div>
+          
+          <input type="hidden" name="_csrf" value="{{csrf}}">
+
+          <button class="btn btn-login btn-primary" type="submit">Зарегистрироваться</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

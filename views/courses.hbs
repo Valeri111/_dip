@@ -8,16 +8,16 @@
       </div>
       <div class="card-content">
         <span class="card-title">{{title}}</span>
-        <p class="price">{{price}}</p>
+        <p class="price card-time">{{price}}</p>
       </div>
       <div class="card-action actions">
-        <a href="{{titlehref}}" target="_blank">Открыть курс</a>
+        <a href="{{titlehref}}" target="_blank" class="card-link">Открыть курс</a>
         {{#if @root.isAuth}}
-          <a href="/courses/{{id}}/edit?allow=true">Редактировать</a>
+          <a href="/courses/{{id}}/edit?allow=true" class="card-link">Редактировать</a>
           <form action="/card/add" method="POST">
             <input type="hidden" name="_csrf" value="{{@root.csrf}}">
             <input type="hidden" name="id" value="{{id}}">
-            <button type="submit" class="btn btn-primary">Купить</button>
+            <button type="submit" class="btn btn-primary">пройти</button>
           </form>
         {{/if}}
       </div>
@@ -26,5 +26,5 @@
 </div>
 {{/each}}
 {{else}}
-<p>Курсов пока нет</p>
+<p class="nothing">Курсов пока нет</p>
 {{/if}}
