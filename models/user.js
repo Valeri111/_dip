@@ -36,7 +36,7 @@ userSchema.methods.addToCart = function(course) {
   })
 
   if (idx >= 0) {
-    items[idx].count = items[idx].count + 1
+    items[idx].count = items[idx].count 
   } else {
     items.push({
       courseId: course._id,

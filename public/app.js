@@ -41,11 +41,16 @@ if ($card) {
           if (card.courses.length) {
             const html = card.courses.map(c => {
               return `
-              <tr>
-                <td>${c.title}</td>
-                <td>${c.count}</td>
-                <td>
-                  <button class="btn btm-small js-remove" data-id="${c.id}">Удалить</button>
+                <td class="table-description">
+                ${c.title}
+                  <p>Продолжительность прохождения курса в часах:</p>
+                  
+                </td>
+                <td class="table-description">
+                  <div class="table-btns">
+                    <button class="btn btm-small js-remove"  data-id="${c.id}"
+                  data-csrf="{{@root.csrf}}">Удалить</button>
+                  </div>
                 </td>
               </tr>
               `
