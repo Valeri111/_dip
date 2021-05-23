@@ -1,12 +1,12 @@
 const toCurrency = price => {
-  return new Intl.NumberFormat('ru-RU', {
-    currency: 'rub',
+  return new Intl.NumberFormat('ru', {
+    currency: 'ч',
     style: 'currency'
-  }).format(price)
+  }).format(2)
 }
 
 const toDate = date => {
-  return new Intl.DateTimeFormat('ru-RU', {
+  return new Intl.DateTimeFormat('ru', {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
