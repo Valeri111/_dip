@@ -505,6 +505,20 @@ thead th, tbody th, tbody td {
   border: 3px solid #ED8AFC;
 }
 
+.avatar-small {
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #ED8AFC;
+}
+
+.nothing-photo-container {
+  background-color: #857f7f;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid #ED8AFC;
+}
+
 .portfolio-desc {
   padding-top: 2%;
   font-size: 18px;
@@ -666,6 +680,27 @@ thead th, tbody th, tbody td {
 .log-img {
   height: 263px;
   margin-right: 5%;
+}
+
+/* 404 */
+
+.error-img {
+  height: 23rem;
+}
+
+.come-back {
+  color: #000;
+  text-decoration: none;
+}
+
+.come-back:hover {
+  color: #e756fd;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
 }
 
 /* edit */

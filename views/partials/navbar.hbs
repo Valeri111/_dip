@@ -36,6 +36,12 @@
         {{/if}} 
 
         <li class="navigation-item"><a href="/auth/logout" class="navigation-link">Выйти</a></li>
+
+        {{!-- {{#if user.avatarUrl}}
+          <li class="navigation-item"><img class="avatar-small" src="{{user.avatarUrl}}" alt="avatar-{{user.name}}"></li>
+        {{else}}
+          <li class="navigation-item"><div class="nothing-photo-container"></div></li>
+        {{/if}} --}}
       {{else}}
         {{#if isLogin}}
           <li class="active navigation-item">
