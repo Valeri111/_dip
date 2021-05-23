@@ -16,10 +16,15 @@
 
         <div class="input-field">
           <input id="name" name="name" type="text" class="validate" placeholder="Ваше имя" required value="{{user.name}}">
-          {{!-- <label for="name">Ваше имя</label>
-          <span class="helper-text" data-error="Имя не может быть пустым"></span> --}}
         </div>
-
+        <div class="input-field">
+          <input id="note" name="note" type="text" class="validate" placeholder="Заметка" required value="{{user.note}}">
+        </div>
+          {{#if user.note}}
+          <p>{{user.note}}</p>
+        {{else}}
+        <p>Введите заметку</p>
+        {{/if}}
         <div class="file-field input-field">
             <div class="upload-file">
               <p class="portfolio-desc">Аватар: </p>

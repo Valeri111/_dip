@@ -17,12 +17,15 @@ router.post('/', auth, async (req, res) => {
     const toChange = {
       name: req.body.name
     }
+    const toNote = {
+      note: req.body.note
+    }
 
     if (req.file) {
       toChange.avatarUrl = req.file.path
     }
 
-    Object.assign(user, toChange)
+    Object.assign(user, toChange,toNote)
     await user.save()
     res.redirect('/profile')
   } catch (e) {
