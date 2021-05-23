@@ -8,7 +8,8 @@ const router = Router()
 router.get('/', auth, (req, res) => {
   res.render('add.hbs', {
     title: 'Добавить курс',
-    isAdd: true
+    isAdd: true,
+    user: req.user.toObject()
   })
 })
 router.post('/', auth, courseValidators, async (req, res) => {
@@ -18,6 +19,7 @@ router.post('/', auth, courseValidators, async (req, res) => {
     return res.status(422).render('add.hbs', {
       title: 'Добавить курс',
       isAdd: true,
+      user: req.user.toObject(),
       error: errors.array()[0].msg,
       data: {
         title: req.body.title,

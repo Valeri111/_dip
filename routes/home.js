@@ -4,7 +4,7 @@ const router = Router()
 router.get('/', (req, res) => {
   res.render('index.hbs', {
     title: 'Главная страница',
-    isHome: true
+    isHome: true,
   })
 })
 

@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
   res.render('courses.hbs', {
     title: 'Курсы',
     isCourses: true,
+    user: req.user.toObject(),
     userId: req.user ? req.user._id.toString() : null,
     courses
   })
@@ -34,7 +35,8 @@ router.get('/:id/edit', auth, async (req, res) => {
 
     res.render('course-edit.hbs', {
       title: `Редактировать ${course.title}`,
-      course
+      course,
+      user: req.user.toObject()
     })
   } catch (e) {
     console.log(e)
@@ -80,7 +82,8 @@ router.get('/:id', async (req, res) => {
   res.render('course.hbs', {
     layout: 'empty',
     title: `Курс ${course.title}`,
-    course
+    course,
+    user: req.user.toObject()
   })
 })
 

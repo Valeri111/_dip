@@ -13,8 +13,11 @@
       <div class="card-action actions">
         <a href="{{titlehref}}" target="_blank" class="card-link">Открыть курс</a>
         {{#if @root.isAuth}}
+          {{#if @root.user.isAdmin}}
           <a href="/courses/{{id}}/edit?allow=true" class="card-link">Редактировать</a>
-          <form action="/card/add" method="POST">
+          
+          {{/if}}
+          <form action="/card/add" method="POST"></form>
             <input type="hidden" name="_csrf" value="{{@root.csrf}}">
             <input type="hidden" name="id" value="{{id}}">
             <button type="submit" class="btn btn-primary">пройти</button>

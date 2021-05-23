@@ -11,6 +11,7 @@ const userSchema = new Schema({
     required: true
   },
   note: String,
+  isAdmin: Boolean,
   avatarUrl: String,
   cart: {
     items: [
