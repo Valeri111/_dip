@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Основы интернета</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./img/world2.png" type="image/png">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="circle header__circle"></div>
+      <h1 class="logo-title">Основы интернета</h1>
+    </header>
+    <main>
+      <section class="content">
+        <div class="content__text">
+          <h3 class="title">Содержание:</h3>
+          <ol class="list">
+            <li class="list__item description"><a href="#basic" class="list__link">базовые понятия;</a></li>
+            <li class="list__item description"><a href="#domain" class="list__link">система доменных имён(Domain Name System);</a></li>
+            <li class="list__item description"><a href="#methods" class="list__link">методы;</a></li>
+            <li class="list__item description"><a href="#codes" class="list__link">коды состояний;</a></li>
+            <li class="list__item description"><a href="#cors" class="list__link">CORS;</a></li>
+            <li class="list__item description"><a href="#whats-happen" class="list__link">что происходит, когда набираешь URL в строке ввода;</a></li>
+            <li class="list__item description"><a href="#test" class="list__link">тест.</a></li>
+          </ol>
+        </div>
+        <div class="content__img-container">
+          <img src="./img/undraw_Online_learning_re_qw08 1.png" alt="content" class="content__img">
+        </div>
+        <div class="circle content__circle"></div>
+      </section>
+      <section class="basic" id="basic">
+        <div class="basic__section">
+          <h2 class="main-title">Базовые понятия</h2>
+          <h3 class="title basic__title">Uniform Resource Locators (URL)</h3>
+          <h3 class="title"><a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL" class="link" target="_blank">https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL</a></h3>
+          <p class="description">URL является одной из ключевых концепций в вебе. URL – это просто адрес какого-то уникального ресурса в интернете. Это может быть HTML файл, видео, CSS файл. Из чего состоит URL?</p>
+        </div>
+        <div class="structure__section">
+          <div class="circle structure__circle"></div>
+          <h3 class="title">Структура</h3>
+          <ul class="list">
+            <li class="list__item description move-item">Первая часть – протокол. Может быть как http, так https. Браузер также может обрабатывать mailto и ftp.</li>
+            <li class="list__item description move-item second-move">Доменное имя, которое может содержать саб-домены и обязательный домен верхнего уровня: .ru, .com, .net, .org, etc.
+              Доменное имя указывает на сервер, куда в конечном итоге будет обращаться браузер. Вместо доменного имени может быть IP адрес сервера.</li>
+            <li class="list__item description move-item third-move">Порт – если порт не указан, то используется 80 для HTTP протокола и 443 для HTTPS.</li>
+            <li class="list__item description move-item third-move">Путь к файлу – изначально это был путь к физическому файлу на сервере, а сейчас абстракция, которая обрабатывается сервером, после чего отдаются какие-либо данные.</li>
+            <li class="list__item description move-item fourth-move">Параметры – дополнительные параметры, которые записываются после вопроса и разделяются амперсандом. Имеют вид ключ=значение.</li>
+            <li class="list__item description move-item fifth-move">Якорь дает браузеру информацию как нужно отобразить содержимое. Например для страницы он указывает в какую часть страницы нужно проскролить окно. Нужно отметить, что якорь не шлется с запросом на сервер.</li>
+          </ul>
+          <div class="img-container">
+            <img src="./img/structure.png" alt="structure" class="structure-img">
+          </div>
+        </div>
+        <div class="types">
+          <div class="circle types__circle"></div>
+          <h3 class="title">Виды URL</h3>
+          <div class="url-list">
+            <div class="list-container first">
+              <p class="description">1. Абсолютный: https://www.google.com/search?q=test;</p>
+              <p class="description">3. Релативный: ../search?q=test</p>
+            </div>
+            <div class="list-container">
+              <p class="description">2. Неявный протокол: //www.google.com/search?q=test</p>
+              <p class="description">4. Неявный домен: /search?q=test</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="domain" id="domain">
+        <div class="domain-about-section">
+          <h2 class="main-title center">Domain Name System. Система доменных имён</h2>
+          <p class="description">DNS (Domain Name System «система доменных имён») — компьютерная распределённая система для получения информации о доменах. Чаще всего используется для получения IP-адреса по имени хоста (компьютера или устройства). Грубым языком – сервер, который имеет соответствие доменного имени и IP адреса.</p>
+          <div class="domains">
+            <div class="domain-container">
+              <div class="title-container">
+                <h3 class="title domains__title">TCP</h3>
+              </div>
+              <p class="description">Transmission Control Protocol (TCP, протокол управления передачей) — один из основных протоколов передачи данных интернета. Механизм TCP предоставляет поток данных с предварительной установкой соединения, осуществляет повторный запрос данных в случае потери данных и устраняет дублирование при получении двух копий одного пакета, гарантируя тем самым целостность передаваемых данных и уведомление отправителя о результатах передачи. Все ваши данные, которые вы хотели/хотите послать на сервер оборачиваются изначально в HTTP протокол, а после этого в TCP. Это работает для HTTP/1.1 и HTTP/2.0, но в HTTP/3.0 данный протокол планируют заменить на UDP. Иногда это спрашивают на собесах.</p>
+            </div>
+            <div class="domain-container">
+              <div class="title-container">
+                <h3 class="title domains__title">HTTP</h3>
+              </div>
+              <p class="description">Протокол прикладного уровня передачи произвольных данных. Это обычно преподается в универах, так что давайте и мы быстренько посмотрим что это такое в упрощенном виде. Это кстати иногда спрашивают на собесах. Что такое протокол прикладного уровня? Есть такое понятие как 7-уровневая модель ОСИ. Посредством данной модели различные устройства могут взаимодействовать в сети. Тут каждый уровень выполняет определенные действия для преобразования данных и манипуляции с адресами отправителя и получателя. Например прикладной уровень позволяет приложению обернуть ваши данные, которые вы хотите послать через интернет в HTTP протокол и отправить их дальше по модели ОСИ. Еще через несколько степов то, что вы хотите отправить оборачивается уже в TCP протокол, который уже будет дублировать ваши запросы или отклонять при таймаутах. Потом добавляется IP адрес источника и получателя, преобразование в электрические сигналы и отправка по проводам и как только вторая сторона получает сигнал все это же происходит заново. Давайте вернемся к HTTP. HTTP предполагает под собой, что есть потребитель данных и их поставщик. Другими словами клиент и сервер. Клиент инициирует запрос, а сервер производит необходимые действия для генерации ответа.</p>
+            </div>
+          </div>
+        </div>
+        <div class="domain-structure">
+          <h3 class="title domain-structure__title">Структура</h3>
+          <p class="description">Каждое HTTP-сообщение состоит из трёх частей, которые передаются в указанном порядке:</p>
+          <ol class="list domain-list">
+            <li class="description">Стартовая строка.</li>
+            <li class="description">Заголовки.</li>
+            <li class="description">Тело сообщения.</li>
+          </ol>
+          <h3 class="title domain-structure__title">Стартовая строка (Starting line)</h3>
+          <p class="description">Стартовая строка определяет тип сообщения.Разделяют на запрос/ответ:</p>
+          <div class="domains domains-lists">
+            <div class="domains-list">
+              <p class="description">Запрос содержит:</p>
+              <ol class="list">
+                <li class="description">Метод – тип запроса, одно слово заглавными буквами;
+                </li>
+                <li class="description">URI – определяет путь к запрашиваемому документу;
+                </li>
+                <li class="description">Версию.</li>
+              </ol>
+            </div>
+            <div class="domains-list">
+              <p class="description">Ответ содержит:</p>
+              <ol class="list">
+                <li class="description">Версию;</li>
+                <li class="description">Код состояния – код ответа, разберем какие могут быть чуть позже; </li>
+                <li class="description">Пояснение – текстовое короткое пояснение к ответу.</li>
+              </ol>
+            </div>
+          </div>
+          <h3 class="title">Заголовки (headers)</h3>
+          <p class="description">Это строки в HTTP-сообщении, содержащие пару параметр-значение. Позволяют прокидывать дополнительную информацию Все заголовки разделяются на четыре основных группы:</p>
+          <div class="circle headers__circle"></div>
+          <ul class="list dom-list">
+            <li class="list__item description dom-item">General Headers («Основные заголовки») — могут включаться в любое сообщение клиента и сервера;</li>
+            <li class="list__item description dom-item second">Request Headers («Заголовки запроса») — используются только в запросах клиента;</li>
+            <li class="list__item description dom-item second">Response Headers («Заголовки ответа») — только для ответов от сервера;</li>
+            <li class="list__item description dom-item fourth">Entity Headers («Заголовки сущности») — сопровождают каждую сущность сообщения.</li>
+          </ul>
+          <h3 class="title body-title">Тело сообщения (Message Body)</h3>
+          <p class="description">Тело HTTP-сообщения, если оно присутствует, используется для передачи тела объекта, связанного с запросом или ответом.</p>
+        </div>
+      </section>
+      <section class="methods" id="methods">
+        <div class="methods-about__section">
+          <h2 class="main-title methods__main-title center">Методы</h2>
+          <p class="description">Последовательность из символов, указывающая на основную операцию над ресурсом.</p>
+        </div>
+        <div class="results-container">
+          <div class="results-item">
+              <div class="number-circle description">1</div>
+              <div class="item_desc">
+                <h3 class="title">GET</h3>
+                <p class="description">Используется для запроса содержимого указанного ресурса. С помощью метода GET можно также начать какой-либо процесс. Является идемпотентным. Идемпотентность – свойство объекта или операции при повторном применении операции к объекту давать тот же результат, что и при первом.
+                <br>
+                <span class="pink">Примеры использования: </span>получить список юзеров для сайта, получить какой-либо файл со скриптам, получить информацию про товар в каталоге. Тут нужно понимать, что GET только получает данные.</p>
+              </div>
+          </div>
+          <div class="results-item last-result-item">
+              <div class="number-circle description">2</div>
+              <div class="item_desc">
+                <h3 class="title">PUT</h3>
+                <p class="description">Применяется для загрузки содержимого запроса на указанный в запросе URI. Если по заданному URI не существует ресурс, то сервер создаёт его и возвращает статус 201 (Created). Если же был изменён ресурс, то сервер возвращает 200 (Ok) или 204 (No Content). Фундаментальное различие методов POST и PUT заключается в понимании предназначений URI ресурсов. Метод POST предполагает, что по указанному URI будет производиться обработка передаваемого клиентом содержимого. Используя PUT, клиент предполагает, что загружаемое содержимое соответствует находящемуся по данному URI ресурсу.
+                <br>
+                <span class="pink">Примеры использования: </span>обновить все данные о юзере.</p>
+              </div>
+          </div>
+          <div class="results-item">
+              <div class="number-circle description">3</div>
+              <div class="item_desc">
+                <h3 class="title">POST</h3>
+                <p class="description">Применяется для передачи пользовательских данных заданному ресурсу. Не считается идемпотентным, то есть многократное повторение одних и тех же запросов POST может возвращать разные результаты.
+                <br>
+                <span class="pink">Примеры использования: </span>создать юзера, сохранить данные оплаты, добавить комментарий.</p>
+              </div>
+          </div>
+          <div class="results-item last-result-item">
+              <div class="number-circle description">4</div>
+              <div class="item_desc">
+                <h3 class="title">OPTIONS</h3>
+                <p class="description">Используется для определения возможностей веб-сервера или параметров соединения для конкретного ресурса. В ответ серверу следует включить заголовок Allow со списком поддерживаемых методов. Также в заголовке ответа может включаться информация о поддерживаемых расширениях. Обычно разработчик не отправляет эти запросы, а браузер это делает за него. Зачем и когда мы рассмотрим чуть позже. Есть и еще несколько методов, но мы рассмотрели основные, если хотите посмотреть что есть, можете загуглить ;)</p>
+              </div>
+          </div>
+          <div class="results-item">
+              <div class="number-circle description">5</div>
+              <div class="item_desc">
+                <h3 class="title">PATCH</h3>
+                <p class="description">Аналогично PUT, но применяется только к фрагменту ресурса. Грубо говоря, когда пытаетесь изменить часть ресурса – юзайте PATCH, когда весь ресур – юзайте PUT. При разработке проекта программисты обычно договариваются использовать что-то одно: или PATCH, или PUT.</p>
+              </div>
+          </div>
+          <div class="results-item last-result-item">
+              <div class="number-circle description">6</div>
+              <div class="item_desc">
+                <h3 class="title">DELETE</h3>
+                <p class="description">Удаляет указанный ресурс.
+                <br>
+                <span class="pink">Примеры использования: </span>удалить юзера, удалить товар в каталоге.</p>
+              </div>
+          </div>
+      </div>
+      </section>
+      <section class="codes" id="codes">
+        <div class="codes__section">
+          <div class="circle codes__circle"></div>
+          <h2 class="main-title center">Коды состояний</h2>
+          <p class="description">Код состояния отправляет сервер в ответ на запрос. Клиент узнаёт по коду ответа о результатах его запроса и определяет, какие действия ему предпринимать дальше. Код состояний представляет собой целое число из трёх цифр. Первая цифра указывает на класс состояния.</p>
+          <h3 class="title codes__link"><a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" class="link" target="_blank">https://en.wikipedia.org/wiki/List_of_HTTP_status_codes</a></h3>
+          <p class="description codes__description">В HTTP обычно используются 5 классов:</p>
+          <ol class="list">
+            <li class="list__item description">1xx - Информирование о процессе передачи. Например 102 код - запрос принят, но на его обработку понадобится длительное время;
+            </li>
+            <li class="list__item description">2xx - Информирование о случаях успешного принятия и обработки запроса клиента;
+              <ol class="list-list" type="a">
+                <li class="list-list__item description">200 - OK - все хорошо</li>
+                <li class="list-list__item description">201 - Created - что-то создано
+                </li>
+                <li class="list-list__item description">202 - Accepted - запрос был принят на обработку, но она не завершена
+                </li>
+                <li class="list-list__item description">204 - No content - все ОК, но ответ не содержит тела</li>
+              </ol>
+            </li>
+            <li class="list__item description">3xx - Сообщает клиенту, что для успешного выполнения операции необходимо сделать другой запрос;
+            </li>
+            <li class="list__item description">4xx - Указание ошибок со стороны клиента;
+              <ol class="list-list" type="a">
+                <li class="list-list__item description">400 - Bad request - плохие данные. Сервер обнаружил в запросе клиента синтаксическую ошибку
+                </li>
+                <li class="list-list__item description">401 - Unauthorized - не авторизован. Для доступа к запрашиваемому ресурсу требуется аутентификация
+                </li>
+                <li class="list-list__item description">403 - Forbidden - запрещено. Сервер понял запрос, но он отказывается его выполнять из-за ограничений в доступе для клиента к указанному ресурсу
+                </li>
+                <li class="list-list__item description">404 - Not found - не найдено
+                </li>
+                <li class="list-list__item description">405 - Method not allowed. Указанный клиентом метод нельзя применить к текущему ресурсу
+                </li>
+                <li class="list-list__item description">409 - Conflict. Запрос не может быть выполнен из-за конфликтного обращения к ресурсу
+                </li>
+                <li class="list-list__item description">429 - To many requests. Клиент попытался отправить слишком много запросов за короткое время, что может указывать, например, на попытку DDoS-атаки</li>
+              </ol>
+            </li>
+            <li class="list__item description">5xx - Информирование о случаях неудачного выполнения операции по вине сервера.
+              <ol class="list-list" type="a">
+                <li class="list-list__item description">500 - Internal server error
+                </li>
+                <li class="list-list__item description">501 - Not implemented</li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section class="cors" id="cors">
+        <div class="cors__section">
+          <h2 class="main-title center">CORS</h2>
+          <h3 class="title"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" class="link" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+          </a></h3>
+          <p class="description mb">Cross-origin resource sharing (совместное использование ресурсов между разными источниками).
+          </p>
+          <p class="description mb">Технология современных браузеров, которая позволяет предоставить веб-страницам доступ к ресурсам другого домена.
+          </p>
+          <p class="description mb">Для этого браузер лично шлет OPTIONS запрос, чтобы убедиться, может ли наш сайт обратиться к ресурсу другого домена или нет. Выделяются запросы, которые называют простыми. Если разработчик пытается послать простой запрос на другой домен, то браузер не будет посылать дополнительный OPTIONS запрос.
+          </p>
+          <p class="description mb">Браузер посылает дополнительный заголовок если запрос не удовлетворяет следующим требованиям:</p>
+          <ol class="list">
+            <li class="list__item description">Метод: GET, HEAD, POST
+            </li>
+            <li class="list__item description">Кроме дефолтных заголовков браузера (список ниже) можно установить только следующие заголовки: Accept, Accept-Language, Content-Language, Content-Type
+              <ol class="list-list" type="a">
+                <li class="list-list__item description">Accept-Charset</li>
+                <li class="list-list__item description">Accept-Encoding</li>
+                <li class="list-list__item description">Access-Control-Request-Headers</li>
+                <li class="list-list__item description">Access-Control-Request-Method</li>
+                <li class="list-list__item description">Connection</li>
+                <li class="list-list__item description">Content-Length</li>
+                <li class="list-list__item description">Cookie</li>
+                <li class="list-list__item description">Cookie2</li>
+                <li class="list-list__item description">Date</li>
+                <li class="list-list__item description">DNT</li>
+                <li class="list-list__item description">Expect</li>
+                <li class="list-list__item description">Host</li>
+                <li class="list-list__item description">Keep-Alive</li>
+                <li class="list-list__item description">Origin</li>
+                <li class="list-list__item description">Referer</li>
+                <li class="list-list__item description">TE</li>
+                <li class="list-list__item description">Trailer</li>
+                <li class="list-list__item description">Transfer-Encoding</li>
+                <li class="list-list__item description">Upgrade</li>
+                <li class="list-list__item description">Via</li>
+              </ol>
+            </li>
+            <li class="list__item description">Content-Type может содержать только следующие значения: application/x-www-form-urlencoded, multipart/form-data, text-plain
+            </li>
+            <li class="list__item description">Без ридблСтримов
+            </li>
+            <li class="list__item description">Нельзя устанавливать эвентов на XMLHttpRequestUpload</li>
+          </ol>
+          <p class="description lets-see">Давайте посмотрим как это работает:</p>
+          <p class="description lets-see-desc">В первом запросе мы просто сделали GET на другой ресурс без каких-то заголовков. Тут все хорошо и браузер не будет посылать дополнительного запроса.</p>
+          <div class="corses-explain">
+            <div class="courses-container">
+              <h4 class="courses-title">Request:</h4>
+              <p class="description">GET /resources/public-data/ HTTP/1.1</p>
+              <p class="description">Host: bar.other</p>
+              <p class="description">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:71.0) Gecko/</p>
+              <p class="description">Firefox/71.0</p>
+              <p class="description">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</p>
+              <p class="description">Accept-Language: en-us,en;q=0.5</p>
+              <p class="description">Accept-Encoding: gzip,deflate</p>
+              <p class="description">Connection: keep-alive</p>
+              <p class="description">Origin: https://foo.example</p>
+            </div>
+            <div class="courses-container">
+              <h4 class="courses-title">Response:</h4>
+              <p class="description">HTTP/1.1 200 OK</p>
+              <p class="description">Date: Mon, 01 Dec 2008 00:23:53 GMT</p>
+              <p class="description">Server: Apache/2</p>
+              <p class="description">Access-Control-Allow-Origin: *</p>
+              <p class="description">Keep-Alive: timeout=2, max=100</p>
+              <p class="description">Connection: Keep-Alive</p>
+              <p class="description">Transfer-Encoding: chunked</p>
+              <p class="description">Content-Type: application/xml</p>
+              <p class="description">[…XML Data…]</p>
+            </div>
+          </div>
+          <div class="img-container">
+            <img src="./img/cors.png" alt="cors" class="cors-img">
+          </div>
+          <p class="description margin">Если это не простой запрос, то будет отправлен дополнительный (preflighted) запрос. Давайте рассмотрим следующий код:</p>
+          <div class="code-container">
+            <code class="description">const xhr = new XMLHttpRequest();</code>
+            <br>
+            <code class="description">xhr.open('POST', 'https://bar.other/resources/post-here/');</code>
+            <br>
+            <code class="description">xhr.setRequestHeader('X-PINGOTHER', 'pingpong');</code>
+            <br>
+            <code class="description">xhr.setRequestHeader('Content-Type', 'application/xml');</code>
+            <br>
+            <code class="description">xhr.onreadystatechange = handler;</code>
+            <br>
+            <code class="description">xhr.send('&lt;person&gt;&lt;name&gt;Arun&lt;/name&gt;&lt;/person&gt;');</code>
+          </div>
+          <p class="description margin">Здесь браузер пошлет дополнительный запрос, т.к. Используется нестандартный content-type и есть дополнительный небезопасный header</p>
+          <div class="img-container margin">
+            <img src="./img/content-type.png" class="content-type-img" alt="content-type">
+          </div>
+          <p class="description margin-min">Лучше не юзать редиректы на preflighted request. Многие браузеры могут кинуть ошибку.Запрос с credentials.
+          </p>
+          <p class="description margin-min">По-дефолту запросы которые инициируются с javascript’а не добавляют данных с информацией аутентификации. Для этого обычно используются куки. Для этого нужно добавить флаг withCredentials в запрос, что даст доступ к кукам для запроса/ответа.</p>
+          <p class="description margin-min">Для таких запросов, если он удовлетворяет требованию “простой запрос”, не пошлется OPTIONS запрос. Но если в ответе не будет заголовка Access-Control-Allow-Credentials, то браузер выкинет ошибку.</p>
+        </div>
+      </section>
+      <section class="whats-happen" id="whats-happen">
+        <div class="whats__section">
+          <h2 class="main-title center margin-max">Что происходит, когда набираешь URL в строке ввода</h2>
+          <h3 class="title">Links</h3>
+          <ul class="list">
+            <li class="list__item description "><a href="https://medium.com/@julianfrancor9/what-happens-when-you-type-a-url-in-your-browser-and-press-enter-50312e4f346c" class="link">https://medium.com/@julianfrancor9/what-happens-when-you-type-a-url-in-your-browser-and-press-enter-50312e4f346c</a></li>
+            <li class="list__item description "><a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work" class="link">https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work</a></li>
+            <li class="list__item description "><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works" class="link">https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works</a></li>
+          </ul>
+          <ol class="list margin">
+            <li class="list__item description">Браузер проверяет свой кэш на наличия записи доменного имени и соответствующего IP адреса.
+            </li>
+            <li class="list__item description">раузер спрашивает операционную систему на наличие данного соответствия в файле hosts.
+              <ol class="list-list" type="a">
+                <li class="list-list__item description">C:\windows\system32\drivers\etc\hosts
+                </li>
+                <li class="list-list__item description">/etc/hosts</li>
+              </ol>
+            </li>
+            <li class="list__item description">сли домен нигде не закэширован и отсутствует в файле hosts, отправляет запрос к сетевому DNS-серверу. Как правило, это локальный роутер или DNS-сервер интернет-провайдера.</li>
+            <div class="part-list">
+              <ol class="list four-ol">
+                <li class="list__item description" value="4">Если интернет провайдер не знает доменного имени, то запрос отправляется к Root Server, который знает где располагается DNS сервер для домена верхнего уровня (e.g. .com).
+                </li>
+                <li class="list__item description">Браузер обращается напрямую к ДНС серверу домена верхнего уровня
+                </li>
+                <li class="list__item description">ДНС сервер отвечает, знает ли он IP адрес для домена, если там используется сабдомен, то мы переходим к пункту 5 начинаем заново.
+                </li>
+                <li class="list__item description">После всех итераций у браузера есть IP адрес нужного сервера и протокол соединения (HTTP, HTTPS), после чего браузер устанавливает TCP соединение с этим сервером. В зависимости от протокола, браузер обращается к 80 или к 443 порту, что соответствует HTTP и HTTPS протоколам соответственно. Поговорить про трехэтапное рукопожатие TCP/UDP и HTTP/HTTPs Клиентский компьютер отправляет сообщение ClientHello серверу со своей версией протокола TLS</li>
+              </ol>
+              <div class="img-container">
+                <img src="./img/how-dns-work.png" alt="how-dns-work" class="img-how">
+              </div>
+            </div>
+            <ol class="list" type="a">
+              <li class="list__item description">Сервер отвечает клиенту сообщением ServerHello, содержащим версию TLS и публичный сертификат сервиса, подписанный центром сертификации. Сертификат содержит публичный ключ, который будет использоваться клиентом для шифрования оставшейся части процедуры «рукопожатия» (handshake), пока не будет согласован симметричный ключ.
+              </li>
+              <li class="list__item description">Клиент подтверждает сертификат сервера с помощью своего списка центров сертификации. Если сертификат подписан центром из списка, то серверу можно доверять, и клиент генерирует строку псевдослучайных байтов и шифрует её с помощью публичного ключа сервера. Эти случайные байты могут быть использованы для определения симметричного ключа.
+              </li>
+              <li class="list__item description">Сервер расшифровывает случайные байты с помощью своего секретного ключа и использует эти байты для генерации своей копии симметричного мастер-ключа.
+              </li>
+              <li class="list__item description">Клиент отправляет серверу сообщение Finished, шифруя хеш передачи с помощью симметричного ключа.
+              </li>
+              <li class="list__item description">Сервер генерирует собственный хеш, а затем расшифровывает полученный от клиента хеш, чтобы проверить, совпадёт ли он с собственным. Если совпадение обнаружено, сервер отправляет клиенту собственный ответ Finished, также зашифрованный симметричным ключом.
+              </li>
+              <li class="list__item description">После этого TLS-сессия передаёт данные приложения (HTTP), зашифрованные с помощью подтверждённого симметричного ключа.</li>
+            </ol>
+            <div class="container-imgs">
+              <div class="img-container right">
+                <img src="./img/transition.png" alt="transition">
+              </div>
+              <div class="img-container">
+                <img src="./img/osi.png" alt="osi">
+              </div>
+            </div>
+            <li class="list__item description margin-min" value="8">Когда TCP соединение установлено, браузер шлет HTTP запрос к серверу, сервер отвечает каким-либо ответом.
+            Схема, которую сделали на халбертонСкул. На ней выделили дополнительно с чего состоит бэкенд и как это может работать.</li>
+          </ol>
+          <div class="img-container margin">
+            <img src="./img/how-it-works.png" alt="how-it-works" class="how-it-work-img">
+          </div>
+        </div>
+      </section>
+      <section class="test" id="test">
+        <div class="about-test">
+          <h2 class="main-title center margin-max">Давай проверим что ты запомнил?</h2>
+          <div class="test-container">
+            <div class="questions">
+              
+                <h3 class="title test-title">1. Найди правильный URL:</h3>
+                <input type="checkbox" name="findUrl" value="100" class="checkbox"> <span class="description">https://web-world.com:93/#/courses</span>
+                <br>
+                <input type="checkbox" name="findUrl" value="1 " class="checkbox"> <span class="description">tcp://172.217.20.174:443/?q=wikipedia</span>
+                <br>
+                <input type="checkbox" name="findUrl" value="2" class="checkbox"> <span class="description">http://web-world.com/faq</span>
+                <br>
+                <input type="checkbox" name="findUrl" value="3" class="checkbox"> <span class="description">web-world.com</span>
+                <h3 class="title test-title">2. Какой метод нужно использовать:</h3>
+                <span class="description">1. Форма регистрации</span>
+                <input type="text" name="manifest" class="answer first-answer">
+                <br>
+                <span class="description">2. Форма авторизации</span>
+                <input type="text" name="manifest" class="answer second-answer">
+                <br>
+                <span class="description">3. Кнопка удаления юзера</span>
+                <input type="text" name="manifest" class="answer third-answer">
+                <br>
+                <span class="description">4. Форма покупки</span>
+                <input type="text" name="manifest" class="answer fourth-answer">
+                <br>
+                <span class="description">5. Запустить процесс синхронизации</span>
+                <input type="text" name="manifest" class="answer fifth-answer">
+                <h3 class="title test-title">3. Какой класс кодов состояний отвечает за ошибки со стороны клиента?</h3>
+                <input type="radio" name="findCode" value="right"> <span class="description radio">4xx</span>
+                <input type="radio" name="findCode" value="wrong"> <span class="description radio">5xx</span>
+                <input type="radio" name="findCode" value="wrong"> <span class="description radio">2xx</span>
+                <br>
+                <button type="button" id="submit" class="submit description">Проверить</button>
+                <p class="results description"></p>
+            </div>
+            <div class="img-container">
+              <img src="./img/undraw_online_test_gba7 1.png" alt="test" class="test-img">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="authors">
+        <p class="description">Akulenok Karina</p>
+        <p class="description">Tolkach Valeryia</p>
+      </div>
+      <a href="/" class="brand-logo"><img src="./img/world2.png" alt="logo" class="logo-img img_center"></a>
+      <div class="social-media">
+        <a href="https://t.me/fresh_aku" class="social-icon" target="_blank">
+          <i class="fa fa-telegram fa-2x"></i>
+        </a>
+        <a href="https://www.instagram.com/fresh_aku/" class="social-icon" target="_blank">
+          <i class="fa fa-instagram fa-2x"></i>
+        </a>
+        <a href="mailto:tolkach.200209@gmail.com" class="social-icon" target="_blank">
+          <i class="fab fa-google fa-2x"></i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
