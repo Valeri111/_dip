@@ -68,14 +68,13 @@ router.post('/remove', auth, async (req, res) => {
   try {
     await Course.deleteOne({
       _id: req.body.id,
-      user: req.user.toObject()
+      userId: req.user._id
     })
     res.redirect('/courses')
   } catch (e) {
     console.log(e)
   }
 })
-
 router.get('/:id', async (req, res) => {
   const course = await Course.findById(req.params.id)
   res.render('course.hbs', {
