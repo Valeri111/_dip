@@ -42,7 +42,7 @@ router.get('/', auth,  async (req, res) => {
 
 
   res.render('card.hbs', {
-    title: 'Корзина',
+    title: 'Мои курсы',
     isCard: true,
     courses: courses,
     price: computePrice(courses),

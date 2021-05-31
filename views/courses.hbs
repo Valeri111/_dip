@@ -17,7 +17,7 @@
           <a href="/courses/{{id}}/edit?allow=true" class="card-link">Редактировать</a>
           
           {{/if}}
-          <form action="/card/add" method="POST"></form>
+          <form action="/card/add" method="POST">
             <input type="hidden" name="_csrf" value="{{@root.csrf}}">
             <input type="hidden" name="id" value="{{id}}">
             <button type="submit" class="btn btn-primary">пройти</button>

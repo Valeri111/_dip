@@ -32,7 +32,6 @@ router.get('/:id/edit', auth, async (req, res) => {
     if (!isOwner(course, req)) {
       return res.redirect('/courses')
     }
-
     res.render('course-edit.hbs', {
       title: `Редактировать ${course.title}`,
       course,
@@ -69,7 +68,7 @@ router.post('/remove', auth, async (req, res) => {
   try {
     await Course.deleteOne({
       _id: req.body.id,
-      userId: req.user._id
+      user: req.user.toObject()
     })
     res.redirect('/courses')
   } catch (e) {

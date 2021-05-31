@@ -25,7 +25,7 @@ router.post('/', auth, courseValidators, async (req, res) => {
         title: req.body.title,
         price: req.body.price,
         img: req.body.img,
-        titlehref: req.body.title
+        titlehref: req.body.titlehref
       }
     })
   }
@@ -35,7 +35,7 @@ router.post('/', auth, courseValidators, async (req, res) => {
     price: req.body.price,
     img: req.body.img,
     userId: req.user,
-    titlehref: req.body.title
+    titlehref: req.body.titlehref
   })
 
   try {
