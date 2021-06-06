@@ -6,22 +6,22 @@
     <table>
       <thead>
         <tr class="table-row">
-          <th class="table-title">Название</th>
-          <th class="table-title">Действия</th>
+          <th class="table-title large-text">Название</th>
+          <th class="table-title large-text">Действия</th>
         </tr>
       </thead>
       <tbody>
         
         {{#each courses}}
         <tr class="table-row">
-          <td class="table-description">
+          <td class="table-description medium-text">
             {{title}}
             <p>Продолжительность прохождения курса: {{price}} ч</p>
             
           </td>
-          <td class="table-description">
+          <td class="table-description medium-text">
             <div class="table-btns">
-              <a href="{{titlehref}}" target="_blank" class="card-link">Открыть курс</a>
+              <a href="{{titlehref}}" target="_blank" class="card-link medium-text">Открыть курс</a>
             </div>
             <div class="table-btns">
               <button class="btn btm-small js-remove"  data-id="{{id}}"
@@ -34,7 +34,7 @@
     </table>
     
   {{else}}
-    <p class="nothing">У вас нет курсов </p>
+    <p class="nothing large-text">У вас нет курсов </p>
   {{/if}}
   </div>
 </div>

@@ -1,0 +1,121 @@
+.profile {
+  margin: 0 5%;
+  margin-bottom: 5%;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+  align-items: center;
+}
+
+.profile-item {
+  height: 20.5rem;
+  width: 50%;
+}
+
+.avatar {
+  width: 80%;
+  border-radius: 50%;
+  border: 3px solid #ED8AFC;
+}
+
+.avatar-small {
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #ED8AFC;
+}
+
+.nothing-photo-container {
+  background-color: #ED8AFC;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid #ED8AFC;
+}
+
+.portfolio-desc {
+  padding-top: 2%;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.portfolio-desc-add {
+  font-weight: 600;
+}
+
+.upload-file {
+  padding: 0.5rem;
+  display: flex;
+}
+
+.input__wrapper {
+  width: 100%;
+  position: relative;
+  margin: 15px 0;
+  text-align: center;
+}
+ 
+.input__file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+ 
+.input__file-button-text {
+  line-height: 1;
+  margin-top: 1px;
+}
+ 
+.input__file-button {
+  width: 50%;
+  background: #ED8AFC;
+  color: rgb(255, 246, 246);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); 
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 3px;
+  margin-left: 1rem;
+}
+
+.input__file-button:hover {
+  cursor: pointer;
+  background-color: #e756fd;
+}
+
+.new-btn {
+  text-transform: none;
+  margin-top: 5%;
+}
+
+.nothing-profile {
+  font-weight: 600;
+  color: #000;
+  margin: 13.5% 0;
+}
+
+@media (max-width: 600px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-item {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar {
+    margin-bottom: 5%;
+  }
+}

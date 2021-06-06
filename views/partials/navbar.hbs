@@ -1,43 +1,47 @@
 <nav class="navigation">
   <div class="nav-wrapper">
     <a href="/" class="brand-logo"><img src="/img/world2.png" alt="logo" class="logo-img"></a>
-    <ul  class=" navigation-list">
-
+    <div class="burger-menu">
+      <div class="burger-menu__line1"></div>
+      <div class="burger-menu__line2"></div>
+      <div class="burger-menu__line3"></div>
+    </div>
+    <ul  class="navigation-list">
     {{#if isHome}}
-        <li class="active navigation-item"><a href="/" class="navigation-link">Главная</a></li>
+        <li class="active navigation-item"><a href="/" class="navigation-link medium-text">Главная</a></li>
       {{else}}
-        <li class="navigation-item"><a class="navigation-link" href="/">Главная</a></li>
+        <li class="navigation-item"><a class="navigation-link medium-text" href="/">Главная</a></li>
       {{/if}}
 
-      {{#if isCourses}}
-        <li class="active navigation-item"><a href="/courses" class="navigation-link">Курсы</a></li>
-      {{else}}
-        <li class="navigation-item"><a class="navigation-link" href="/courses">Курсы</a></li>
-      {{/if}}
 
       {{#if isAuth}}
+        {{#if isCourses}}
+          <li class="active navigation-item"><a href="/courses" class="navigation-link medium-text">Курсы</a></li>
+        {{else}}
+          <li class="navigation-item"><a class="navigation-link medium-text" href="/courses">Курсы</a></li>
+        {{/if}}
       {{#if user.isAdmin}}
         {{#if isAdd}}
-          <li class="active navigation-item"><a class="navigation-link" href="/add">Добавить курс</a></li>
+          <li class="active navigation-item"><a class="navigation-link medium-text" href="/add">Добавить курс</a></li>
         {{else}}
-          <li class="navigation-item"><a class="navigation-link" href="/add">Добавить курс</a></li>
+          <li class="navigation-item"><a class="navigation-link medium-text" href="/add">Добавить курс</a></li>
         {{/if}} 
         {{/if}} 
         
         {{#if isProfile}}
-          <li class="active navigation-item"><a class="navigation-link" href="/profile">Профиль</a></li>
+          <li class="active navigation-item"><a class="navigation-link medium-text" href="/profile">Профиль</a></li>
         {{else}}
         
-          <li class="active navigation-item"><a class="navigation-link" href="/profile">Профиль</a></li>
+          <li class="active navigation-item"><a class="navigation-link medium-text" href="/profile">Профиль</a></li>
         {{/if}}
 
         {{#if isCard}}
-          <li class="active navigation-item"><a class="navigation-link" href="/card">Мои курсы</a></li>
+          <li class="active navigation-item"><a class="navigation-link medium-text" href="/card">Мои курсы</a></li>
         {{else}}
-          <li class="navigation-item"><a class="navigation-link" href="/card">Мои курсы</a></li>
+          <li class="navigation-item"><a class="navigation-link medium-text" href="/card">Мои курсы</a></li>
         {{/if}} 
 
-        <li class="navigation-item"><a href="/auth/logout" class="navigation-link">Выйти</a></li>
+        <li class="navigation-item"><a href="/auth/logout" class="navigation-link medium-text">Выйти</a></li>
 
         {{#if user.avatarUrl}}
           <li class="navigation-item"><img class="avatar-small" src="{{user.avatarUrl}}" alt="avatar-{{user.name}}"></li>
@@ -47,7 +51,7 @@
       {{else}}
         {{#if isLogin}}
           <li class="active navigation-item">
-          <a class="navigation-link" href="/auth/login#login">
+          <a class="navigation-link medium-text" href="/auth/login#login">
             <svg class="registr" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.7" d="M7.5 7.10526C7.5 11.0226 10.865 14.2105 15 14.2105C19.135 14.2105 22.5 11.0226 22.5 7.10526C22.5 3.18789 19.135 0 15 0C10.865 0 7.5 3.18789 7.5 7.10526ZM28.3333 30H30V28.4211C30 22.3279 24.765 17.3684 18.3333 17.3684H11.6667C5.23333 17.3684 0 22.3279 0 28.4211V30H1.66667H3.33333H26.6667H28.3333Z" fill="#0E0E0E"/>
             </svg>
@@ -55,7 +59,7 @@
         </li>
         {{else}}
           <li class="navigation-item last-item">
-          <a class="navigation-link last-item" href="/auth/login#login">
+          <a class="navigation-link medium-text last-item" href="/auth/login#login">
             <svg class="registr" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.7" d="M7.5 7.10526C7.5 11.0226 10.865 14.2105 15 14.2105C19.135 14.2105 22.5 11.0226 22.5 7.10526C22.5 3.18789 19.135 0 15 0C10.865 0 7.5 3.18789 7.5 7.10526ZM28.3333 30H30V28.4211C30 22.3279 24.765 17.3684 18.3333 17.3684H11.6667C5.23333 17.3684 0 22.3279 0 28.4211V30H1.66667H3.33333H26.6667H28.3333Z" fill="#0E0E0E"/>
             </svg>

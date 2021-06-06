@@ -6,19 +6,19 @@
           {{#if user.avatarUrl}}
           <img class="avatar" src="{{user.avatarUrl}}" alt="avatar-{{user.name}}">
           {{else}}
-          <p class="nothing-profile">Фотографии нет</p>
+          <p class="nothing-profile large-text">Фотографии нет</p>
           {{/if}}
       </div>
 
     <div class="col s6 profile-item">
       <form action="/profile" method="POST"  enctype="multipart/form-data">
-        <p class="portfolio-desc">Ваше email: <span class="portfolio-desc-add">{{user.email}}</span></p>
+        <p class="portfolio-desc medium-text">Ваше email: <span class="portfolio-desc-add">{{user.email}}</span></p>
 
         <div class="input-field">
-          <input id="name" name="name" type="text" class="validate" placeholder="Ваше имя" required value="{{user.name}}">
+          <input id="name" name="name" type="text" class="validate medium-text" placeholder="Ваше имя" required value="{{user.name}}">
         </div>
         <div class="input-field">
-          <input id="note" name="note" type="text" class="validate" placeholder="Заметка" required value="{{user.note}}">
+          <input id="note" name="note" type="text" class="validate medium-text" placeholder="Заметка" required value="{{user.note}}">
         </div>
           {{#if user.note}}
           <p>{{user.note}}</p>
@@ -27,7 +27,7 @@
         {{/if}}
         <div class="file-field input-field">
             <div class="upload-file">
-              <p class="portfolio-desc">Аватар: </p>
+              <p class="portfolio-desc medium-text">Аватар: </p>
               <div class="input__wrapper">
                 <input type="file" name="avatar" id="input__file" class="input input__file" multiple>
                 <label for="input__file" class="input__file-button">
@@ -36,7 +36,7 @@
               </div>
             </div>
             <div class="file-path-wrapper">
-              <input class="file-path validate" type="text">
+              <input class="file-path validate medium-text" type="text">
             </div>
           </div>
 

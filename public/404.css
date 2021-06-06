@@ -1,0 +1,19 @@
+.error-img {
+  height: 23rem;
+  width: 90%;
+}
+
+.come-back {
+  color: #000;
+  text-decoration: none;
+}
+
+.come-back:hover {
+  color: #e756fd;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}

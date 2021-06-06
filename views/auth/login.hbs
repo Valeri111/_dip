@@ -3,8 +3,8 @@
     <div class="col s12">
       <ul class="tabs">
         <h1 class="title auth-title">Войти на курсы</h1>
-        <li class="tab col s6"><a class="active login-title" href="#login">Войти</a></li>
-        <li class="tab col s6"> <a href="#register" class="login-title">Зарегистрироваться</a></li>
+        <li class="tab col s6"><a class="active login-title medium-text" href="#login">Войти</a></li>
+        <li class="tab col s6"> <a href="#register" class="login-title medium-text">Зарегистрироваться</a></li>
       </ul>
     </div>
     <div class="login-container">
@@ -13,15 +13,15 @@
           <p class="alert">{{loginError}}</p>
         {{/if}}
 
-        <form action="/auth/login" method="POST">
+        <form action="/auth/login" method="POST" class="login-container-form">
           <div class="input-field input-item">
-            <input id="email" name="email" type="email" placeholder="Email" class="validate login-input" required>
+            <input id="email" name="email" type="email" placeholder="Email" class="validate login-input medium-text" required>
             {{!-- <label for="email">Email</label>
             <span class="helper-text" data-error="Введите email"></span> --}}
           </div>
 
           <div class="input-field input-item">
-            <input id="password" name="password" type="password" class="validate login-input" placeholder="Пароль" required>
+            <input id="password" name="password" type="password" class="validate login-input medium-text" placeholder="Пароль" required>
             {{!-- <label for="password">Пароль</label>
             <span class="helper-text" data-error="Введите пароль"></span> --}}
           </div>
@@ -39,25 +39,25 @@
 
         <form action="/auth/register" method="POST">
           <div class="input-field input-item">
-            <input id="remail" name="email" type="email" placeholder="Email" class="validate login-input" required>
+            <input id="remail" name="email" type="email" placeholder="Email" class="validate login-input medium-text" required>
             {{!-- <label for="remail">Email</label>
             <span class="helper-text" data-error="Введите email"></span> --}}
           </div>
 
           <div class="input-field input-item">
-            <input id="rpassword" name="password" type="password" class="validate login-input" placeholder="Пароль" required>
+            <input id="rpassword" name="password" type="password" class="validate login-input medium-text" placeholder="Пароль" required>
             {{!-- <label for="rpassword">Пароль</label>
             <span class="helper-text" data-error="Введите пароль"></span> --}}
           </div>
 
           <div class="input-field input-item">
-            <input id="confirm" name="confirm" type="password" placeholder="Повторите пароль" class="validate login-input" required>
+            <input id="confirm" name="confirm" type="password" placeholder="Повторите пароль" class="validate login-input medium-text" required>
             {{!-- <label for="confirm">Пароль еще раз</label>
             <span class="helper-text" data-error="Введите пароль"></span> --}}
           </div>
 
           <div class="input-field input-item">
-            <input id="name" name="name" type="text" class="validate login-input" placeholder="Имя"  required>
+            <input id="name" name="name" type="text" class="validate login-input medium-text" placeholder="Имя"  required>
             {{!-- <label for="name">Ваше имя</label>
             <span class="helper-text" data-error="Введите имя"></span> --}}
           </div>

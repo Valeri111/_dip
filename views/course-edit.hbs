@@ -3,24 +3,24 @@
 
   <form action="/courses/edit" method="POST">
     <div class="input-field">
-      <input id="title" name="title" type="text" class="validate" required placeholder="Название курса" value="{{course.title}}">
+      <input id="title" name="title" type="text" class="validate medium-text" required placeholder="Название курса" value="{{course.title}}">
       {{!-- <label for="title">Название курса</label>
       <span class="helper-text" data-error="Введите название"></span> --}}
     </div>
 
     <div class="input-field">
-      <input id="price" name="price" type="text" class="validate" placeholder="Продолжительность прохождения курса в часах" required min="0"  value="{{course.price}}">
+      <input id="price" name="price" type="text" class="validate medium-text" placeholder="Продолжительность прохождения курса в часах" required min="0"  value="{{course.price}}">
       {{!-- <label for="price">Цена курса</label>
       <span class="helper-text" data-error="Введите цену"></span> --}}
     </div>
 
     <div class="input-field">
-      <input id="img" name="img" type="text" class="validate" required placeholder="URL картинки"  value="{{course.img}}">
+      <input id="img" name="img" type="text" class="validate medium-text" required placeholder="URL картинки"  value="{{course.img}}">
       {{!-- <label for="img">URL картинки</label>
       <span class="helper-text" data-error="Введите url картинки"></span> --}}
     </div>
       <div class="input-field">
-      <input id="titlehref" name="titlehref" type="text" class="validate" placeholder="URL страницы" required value="{{course.titlehref}}">
+      <input id="titlehref" name="titlehref" type="text" class="validate medium-text" placeholder="URL страницы" required value="{{course.titlehref}}">
       {{!-- <label for="img">URL страницы</label>
       <span class="helper-text" data-error="Введите url страницы"></span> --}}
       </div>
