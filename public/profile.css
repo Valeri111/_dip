@@ -1,6 +1,7 @@
 .profile {
   margin: 0 5%;
   margin-bottom: 5%;
+  height: 35rem;
 }
 
 .profile-container {
@@ -8,6 +9,10 @@
   justify-content: space-between;
   margin-top: 2%;
   align-items: center;
+}
+
+.avatar-container {
+  height: 30rem;
 }
 
 .profile-item {
